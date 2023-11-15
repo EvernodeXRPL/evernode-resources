@@ -1,0 +1,14 @@
+{
+    "testnet": {
+        "governorAddress": "rGVHr1PrfL93UAjyw3DWZoi9adz2sLp2yL",
+        "rippledServer": "wss://hooks-testnet-v3.xrpl-labs.com",
+        "stateIndexId": "evernodeindex",
+        "networkID": 21338
+    },
+    "devnet": {
+        "governorAddress": "raVhw4Q8FQr296jdaDLDfZ4JDhh7tFG7SF",
+        "rippledServer": "wss://hooks-testnet-v3.xrpl-labs.com",
+        "stateIndexId": "evernodev3devindex",
+        "networkID": 21338
+    }
+}
