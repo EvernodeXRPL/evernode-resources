@@ -2,7 +2,7 @@
 # Evernode host latest version installer
 
 [ -z $VERSION ] && VERSION="latest"
-repository="https://api.github.com/repos/kithminisg/simulink/releases"
+repository="https://api.github.com/repos/EvernodeXRPL/evernode-resources/releases"
 
 if [ "$VERSION" = "latest" ]; then
     release_data=$(curl -s "$repository/latest")
