@@ -13,8 +13,8 @@
     },
     "mainnet": {
         "governorAddress": "",
-        "rippledServer": "wss://xahau.network",
-        "stateIndexId": "evernodeprod",
+        "rippledServer": "wss://hooks-testnet-v3.xrpl-labs.com",
+        "stateIndexId": "evernodev3devindex",
         "networkID": 21338
     }
 }
