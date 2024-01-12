@@ -12,7 +12,7 @@
         "networkID": 21338
     },
     "mainnet": {
-        "governorAddress": "",
+        "governorAddress": "rBvKgF3jSZWdJcwSsmoJspoXLLDVLDp6jg",
         "rippledServer": "wss://xahau.network",
         "stateIndexId": "evernodev3devindex",
         "networkID": 21337
