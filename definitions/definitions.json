@@ -14,7 +14,7 @@
     "mainnet": {
         "governorAddress": "rBvKgF3jSZWdJcwSsmoJspoXLLDVLDp6jg",
         "rippledServer": "wss://xahau.network",
-        "stateIndexId": "evernodev3devindex",
+        "stateIndexId": "evernodeprod",
         "networkID": 21337
     }
 }
