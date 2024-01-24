@@ -13,7 +13,7 @@ export MB_XRPL_BIN=$SASHIMONO_BIN/mb-xrpl
 
 mv "$MB_XRPL_BIN/$file" "$MB_XRPL_BIN/$file.bk"
 
-curl "https://raw.githubusercontent.com/$repo_owner/$repo_name/patches/sashimono/patches/resources/mb-xrpl/$file" -o "$MB_XRPL_BIN/$file" &&
+! curl "https://raw.githubusercontent.com/$repo_owner/$repo_name/patches/sashimono/patches/resources/mb-xrpl/$file" -o "$MB_XRPL_BIN/$file" &&
     echo "$file update failed" &&
     cp "$MB_XRPL_BIN/$file.bk" "$MB_XRPL_BIN/$file" &&
     exit 1
