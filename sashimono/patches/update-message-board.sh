@@ -11,11 +11,13 @@ export MB_XRPL_SERVICE="sashimono-mb-xrpl"
 export MB_XRPL_USER="sashimbxrpl"
 export MB_XRPL_BIN=$SASHIMONO_BIN/mb-xrpl
 
+[ ! -f "$MB_XRPL_BIN/$file" ] && echo "Sashimono is not installed on your machine." && exit 1
+
 echo "Backing up the files.."
 
 timestamp=$(date +%s)
 backup_file="$MB_XRPL_BIN/$file-$timestamp.bk"
-[ -f "$MB_XRPL_BIN/$file" ] && mv "$MB_XRPL_BIN/$file" "$backup_file"
+mv "$MB_XRPL_BIN/$file" "$backup_file"
 
 echo "Updating the files.."
 
