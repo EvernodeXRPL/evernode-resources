@@ -13,13 +13,15 @@ export MB_XRPL_BIN=$SASHIMONO_BIN/mb-xrpl
 
 echo "Backing up the files.."
 
-[ -f "$MB_XRPL_BIN/$file" ] && mv "$MB_XRPL_BIN/$file" "$MB_XRPL_BIN/$file.bk"
+timestamp=$(date +%s)
+backup_file="$MB_XRPL_BIN/$file-$timestamp.bk"
+[ -f "$MB_XRPL_BIN/$file" ] && mv "$MB_XRPL_BIN/$file" "$backup_file"
 
 echo "Updating the files.."
 
 if ( ! curl "https://raw.githubusercontent.com/$repo_owner/$repo_name/patch/sashimono/patches/resources/mb-xrpl/$file" -o "$MB_XRPL_BIN/$file" ); then
     echo "Update failed. Restoring.."
-    ! cp "$MB_XRPL_BIN/$file.bk" "$MB_XRPL_BIN/$file" && echo "Restoring failed." && exit 1
+    ! cp "$backup_file" "$MB_XRPL_BIN/$file" && echo "Restoring failed." && exit 1
     echo "Restored."
     exit 1
 fi
