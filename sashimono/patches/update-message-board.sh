@@ -17,7 +17,7 @@ echo "Backing up the files.."
 
 echo "Updating the files.."
 
-if ( ! curl "https://raw.githubusercontent.com/$repo_owner/$repo_name/patches/sashimono/patches/resources/mb-xrpl/$file" -o "$MB_XRPL_BIN/$file" ); then
+if ( ! curl "https://raw.githubusercontent.com/$repo_owner/$repo_name/patch/sashimono/patches/resources/mb-xrpl/$file" -o "$MB_XRPL_BIN/$file" ); then
     echo "Update failed. Restoring.."
     ! cp "$MB_XRPL_BIN/$file.bk" "$MB_XRPL_BIN/$file" && echo "Restoring failed." && exit 1
     echo "Restored."
