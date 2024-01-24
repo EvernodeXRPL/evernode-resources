@@ -13,7 +13,7 @@ export MB_XRPL_BIN=$SASHIMONO_BIN/mb-xrpl
 
 echo "Backing up the files.."
 
-mv "$MB_XRPL_BIN/$file" "$MB_XRPL_BIN/$file.bk"
+[ -f "$MB_XRPL_BIN/$file" ] && mv "$MB_XRPL_BIN/$file" "$MB_XRPL_BIN/$file.bk"
 
 echo "Updating the files.."
 
