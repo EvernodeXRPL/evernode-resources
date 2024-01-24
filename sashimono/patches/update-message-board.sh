@@ -21,7 +21,7 @@ mv "$MB_XRPL_BIN/$file" "$backup_file"
 
 echo "Updating the files.."
 
-if ( ! curl "https://raw.githubusercontent.com/$repo_owner/$repo_name/patch/sashimono/patches/resources/mb-xrpl/$file" -o "$MB_XRPL_BIN/$file" ); then
+if (! curl "https://raw.githubusercontent.com/$repo_owner/$repo_name/patch/sashimono/patches/resources/mb-xrpl/$file" -o "$MB_XRPL_BIN/$file"); then
     echo "Update failed. Restoring.."
     ! cp "$backup_file" "$MB_XRPL_BIN/$file" && echo "Restoring failed." && exit 1
     echo "Restored."
@@ -33,4 +33,6 @@ echo "Restarting the message board.."
 mb_user_id=$(id -u "$MB_XRPL_USER")
 mb_user_runtime_dir="/run/user/$mb_user_id"
 
-! sudo -u "$MB_XRPL_USER" XDG_RUNTIME_DIR="$mb_user_runtime_dir" systemctl --user restart $MB_XRPL_SERVICE && echo "Message board restart failed."
+! sudo -u "$MB_XRPL_USER" XDG_RUNTIME_DIR="$mb_user_runtime_dir" systemctl --user restart $MB_XRPL_SERVICE && echo "Message board restart failed." && exit 1
+
+echo "Message board successfully updated!"
