@@ -39,4 +39,4 @@ fi
 echo "Found Sashimono $VERSION..."
 
 # Exucute the setup
-curl -fsSL $setup | cat | sudo bash -s ${@}
+curl -fsSL $setup | cat | sudo NETWORK=${NETWORK:-mainnet} bash -s ${@}
