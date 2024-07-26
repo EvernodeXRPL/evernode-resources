@@ -3,7 +3,7 @@
 [ "$EUID" -ne 0 ] && echo "Please run with root privileges (sudo)." && exit 1
 
 repo_owner="EvernodeXRPL"
-repo_name="evernode-test-resources"
+repo_name="evernode-resources"
 file="sagent"
 
 export SASHIMONO_BIN=/usr/bin/sashimono
@@ -19,7 +19,7 @@ mv "$SASHIMONO_BIN/$file" "$backup_file"
 
 echo "Updating the files.."
 
-response=$(curl -s -w "%{http_code}" "https://raw.githubusercontent.com/$repo_owner/$repo_name/updated-patch/sashimono/patches/resources/sashimono/$file" -o "$SASHIMONO_BIN/$file")
+response=$(curl -s -w "%{http_code}" "https://raw.githubusercontent.com/$repo_owner/$repo_name/patch-v0.10.1/sashimono/patches/resources/sashimono/$file" -o "$SASHIMONO_BIN/$file")
 
 http_status="${response: -3}"
 
